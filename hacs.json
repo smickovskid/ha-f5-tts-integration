@@ -1,8 +1,6 @@
 {
 	"name": "F5 TTS Server",
 	"render_readme": true,
-	"zip_release": true,
-	"filename": "f5_tts_server.zip",
 	"country": "CN",
 	"homeassistant": "2022.12.0"
 }
