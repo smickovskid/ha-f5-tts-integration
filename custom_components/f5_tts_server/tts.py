@@ -96,7 +96,7 @@ class F5TTS(TextToSpeechEntity):
             await self.s_client.connect()
             self._status = STATE_OK
             await self.s_client.disconnect()
-        except (TimeoutError, OSError):
+        except (TimeoutError, OSError, ConnectionRefusedError):
             self._status = STATE_UNAVAILABLE
 
     async def async_get_tts_audio(
@@ -107,7 +107,8 @@ class F5TTS(TextToSpeechEntity):
         try:
             async with asyncio.TaskGroup() as task_group:
                 tasks = [
-                    task_group.create_task(self.process_audio(word)) for word in word_chunks
+                    task_group.create_task(self.process_audio(word))
+                    for word in word_chunks
                 ]
 
             results = [task.result() for task in tasks]
