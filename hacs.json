@@ -1,5 +1,8 @@
 {
 	"name": "F5 TTS Server",
+	"domains": [
+		"f5_tts_client"
+	],
 	"render_readme": true,
 	"country": "CN",
 	"homeassistant": "2022.12.0"
