@@ -3,7 +3,7 @@
 import asyncio
 import logging
 
-from homeassistant.components.f5_tts_client.const import DEFAULT_TIMEOUT
+from .const import DEFAULT_TIMEOUT
 
 _LOGGER = logging.getLogger(__name__)
 
